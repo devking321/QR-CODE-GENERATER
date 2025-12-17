@@ -30,7 +30,8 @@ function genQrCode() {
     })
 };
 
-download.addEventListener("click",()=>{
+download.addEventListener("click",(e)=>{
+    e.preventDefault();
    const img = document.querySelector(".qr img");
 
 if(img !== null){
@@ -52,3 +53,4 @@ if(img !== null){
 }
    
 })
+
