@@ -4,7 +4,7 @@ const qrDiv = document.querySelector(".qr");
 const generate = document.getElementById("generate");
 const download = document.getElementById("download");
 
-download.disabled=true;
+// download.disabled=true;
 
 generate.addEventListener("click", () => {
     if (input.value.length >= 1) {
@@ -33,15 +33,22 @@ function genQrCode() {
 download.addEventListener("click",()=>{
    const img = document.querySelector(".qr img");
 
-   if(img !== null){
-    let imgAt = img.getAttribute("src");
-    download.setAttribute("href",imgAt);
-   }
-   else{
-   download.disabled
-   }
-    // const link = document.createElement("a");
-    // link.href=img.src;
-    // link.download="qrcode.png";
+if(img !== null){
+     fetch(img.src)
+   .then( res=> res.blob())
+   .then( (blob)=>{
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href=url;
+    a.download="QR_Code.png";
+
+    document.body.appendChild(a);
+    a.click();
+
+   document.body.removeChild(a);
+    URL.revokeObjectURL(url); 
+   } )  
+
+}
    
 })
