@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        overflow: auto;
+        overflow-x: hidden;
         position: relative;
     }
 
@@ -22,6 +22,7 @@
         /* border: 2px solid red; */
         margin-left: 10vw;
         margin-top: 22vh;
+        background-color: white;
     }
 
     #qr-input{
@@ -63,9 +64,16 @@
         height: 3.6rem;
         font-size: 22px;
     }
+    #msg{
+        display: block;
+    }
 }
 
 @media (max-width:380px){
+
+     #msg{
+        display: block;
+    }
 
       header{
         justify-content: center;
@@ -98,6 +106,10 @@
 }
 
 @media (max-width:350px){
+
+     #msg{
+        display: block;
+    }
       header{
         justify-content: center;
         align-items: center;
@@ -144,6 +156,10 @@
 }
 
 @media (height:720px){
+
+     #msg{
+        display: block;
+    }
     .container{
         position: static;
         /* right: 22px; */
@@ -166,5 +182,11 @@
         border: 3px dashed grey;
         border-radius: 2px;
     }
-
 }
+
+/* @media (prefers-color-scheme: dark){
+    body{
+        background-color: black;
+        color: white;
+    }
+} */
