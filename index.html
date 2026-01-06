@@ -20,6 +20,15 @@
 
         gtag('config', 'G-ZZ9ZRJG8NH');
     </script>
+
+  <script>
+    if (window.location.hostname.includes('netlify.app')) {
+      var meta = document.createElement('meta');
+      meta.name = 'robots';
+      meta.content = 'noindex, nofollow';
+      document.head.appendChild(meta);
+    }
+  </script>
     <link rel="canonical" href="https://free-qr-code-generater.vercel.app/" />
     <link rel="icon" href="/favicon.ico">
 
@@ -86,4 +95,5 @@
 </body>
 
 </html>
+
 
